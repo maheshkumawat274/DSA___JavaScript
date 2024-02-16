@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Insert Element</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+
+  <input type="text" id="text1" placeholder="Enter Position">
+  <input type="text" id="text2" placeholder="Enter New Element">
+  <button onclick=GetPosition()>Click</button>
+
+  <script>
+    let array = [30,55,44,75,89,77,42,41,53,12];
+    // let position = 3;
+    // let newEle = 11;
+    // console.log(array)
+    // for(var i=array.length-1; i>=position; i--){
+    //   if(i>=position){
+    //     array[i+1]=array[i];
+    //     if(i>=position){
+    //       array[i]=newEle
+    //     }
+    //   }
+      
+    // }
+    //console.log(array)
+    
+    //dynemically code:====
+
+    GetPosition=()=>{
+      let positionNum1 = document.querySelector("#text1").value;
+      let positionNum = parseInt(positionNum1)
+      let newElements = document.querySelector("#text2").value;
+      let newElement = parseInt(newElements)
+       for(var i=array.length-1; i>=positionNum; i--){
+         if(i>=positionNum){
+          array[i+1]=array[i];
+          if(i==positionNum){
+            array[i]=newElement
+          }
+         }
+       }
+       if(positionNum1 >array.length || positionNum1<0 || isNaN(positionNum1)){
+        alert("Plz enter valid number");
+       }else{
+        alert(array)
+       }
+    }
+  </script>
+</body>
+</html>
