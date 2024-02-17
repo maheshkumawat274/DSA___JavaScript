@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Delete Element</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  
+</head>
+<body>
+  <input type="text" id="text" placeholder="enter value">
+  <button onclick="DeleteValue()">click</button>
+
+
+  <script>
+    // let array = [23,54,65,78,25,32,45];
+    // let newArr = 3
+    // for(var i=newArr; i<array.length-1; i++){
+    //  array[i] = array[i+1]
+    // }
+    // array.length=array.length-1
+    // console.log(array);
+
+
+    //dynemically
+    DeleteValue=()=>{
+      let array = [23,54,65,78,25,32,45];
+      let newArr = document.querySelector("#text").value;
+      for(var i = newArr; i<array.length-1; i++){
+        array[i] = array[i+1];
+      }
+      array.length = array.length-1;
+      
+      if(newArr>array.length || newArr<0 || isNaN(newArr)){
+        alert("invalid value")
+      }else{
+        alert(array);
+      }
+    }
+  </script>
+</body>
+</html>
