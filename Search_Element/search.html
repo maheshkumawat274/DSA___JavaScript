@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Search Element</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  
+</head>
+<body>
+  <input type="text" id="text" placeholder="enter value">
+  <button onclick=SearchElement()>Click</button>
+
+
+  <script>
+    SearchElement=()=>{
+      let array = [2,51,7,8,2,40,6,1,2,3,4,5];
+      let findArr = document.querySelector('#text').value;
+      let pos =[]
+      for(var i=0; i<array.length-1; i++){
+        
+        if(findArr==""){
+          alert("enter something value");
+          return false
+        }else{
+          if(array[i]==findArr){
+          pos = i;
+          alert(pos)
+          continue
+        }
+        }
+      }
+      }
+    
+    
+    
+  </script>
+</body>
+</html>
